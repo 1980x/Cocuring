@@ -20,11 +20,7 @@ def call_bn(bn, x):
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
        
 def resModel(args): #resnet18
-    '''  
-    model = torch.nn.DataParallel(resnet50(end2end= False,  pretrained= False)).to('cuda')
-    model = load_state_dict(model, 'pretrained/vgg_msceleb_resnet50_ft_weight.pkl')
-    return model
-    '''
+    
     if args.normalized:
        model = torch.nn.DataParallel(resnet18(end2end= False,  pretrained= False, num_classes=args.num_classes, normalized= True)).to(device)
     else:
@@ -32,7 +28,7 @@ def resModel(args): #resnet18
     
     if   args.pretrained:
        
-       checkpoint = torch.load('../NovelNoisyFER/pretrained/res18_naive.pth_MSceleb.tar')
+       checkpoint = torch.load('pretrained/res18_naive.pth_MSceleb.tar')
        pretrained_state_dict = checkpoint['state_dict']
        model_state_dict = model.state_dict()
        #pdb.set_trace()
