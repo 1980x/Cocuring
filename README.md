@@ -1,6 +1,9 @@
 # Cocuring
 
 <strong> Our proposed Co-curing framework for FER under noisy annotations:<strong>
+
+Accepted for publication in ICTACT Journal on Image and Video Processing (IJIVP), 2021
+  
 ![Proposed framework](images/co_curing_framework.png)
   
   
